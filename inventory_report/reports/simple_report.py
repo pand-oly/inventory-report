@@ -1,5 +1,6 @@
 from datetime import date
-from collections import Counter
+# from collections import Counter
+from .helpers.products_stocked_by_company import products_stocked_by_company
 
 
 class SimpleReport:
@@ -18,12 +19,7 @@ class SimpleReport:
             if item["data_de_validade"] > today
         ])
 
-        companies = [
-            item["nome_da_empresa"]
-            for item in list
-        ]
-
-        company_with_more_products = Counter(companies).most_common(1)[0][0]
+        company_with_more_products = products_stocked_by_company(list)[0][0]
 
         return (
             f"Data de fabricação mais antiga: {oldest_manufacturing}\n"

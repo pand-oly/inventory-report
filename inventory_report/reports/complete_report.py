@@ -1,5 +1,6 @@
 from inventory_report.reports.simple_report import SimpleReport
-from inventory_report.reports.helpers.products_stocked_by_company import products_stocked_by_company
+from inventory_report.reports\
+    .helpers.products_stocked_by_company import products_stocked_by_company
 
 
 class CompleteReport(SimpleReport):
